@@ -1,0 +1,9 @@
+@use 'sass:math';
+
+@function fluid($px, $container) {
+  @return $px * math.div(100vw, $container);
+}
+
+@function fluidh($px, $container) {
+  @return $px * math.div(100vh / $container);
+}

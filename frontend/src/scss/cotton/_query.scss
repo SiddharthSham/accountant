@@ -1,0 +1,69 @@
+$xs: 415px;
+$s: 650px;
+$m: 850px;
+$l: 1025px;
+$xl: 1440px;
+
+@mixin xs {
+  @media (min-width: #{$xs}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: #{$s}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: #{$m}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: #{$l}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: #{$xl}) {
+    @content;
+  }
+}
+
+// Custom devices
+@mixin rwd($screen) {
+  @media (min-width: $screen+"px") {
+    @content;
+  }
+}
+
+/*
+Example Usage:
+-------------
+
+.container {
+    padding: 0 15px;
+    
+    // 576px window width and more
+    @include sm {
+        padding: 0 20px;
+    }
+    
+    // 992px window width and more
+    @include lg {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1100px;
+    }
+    
+    // 1400px window width and more
+    @include rwd(1400) {
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+}
+*/

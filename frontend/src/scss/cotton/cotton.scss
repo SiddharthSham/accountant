@@ -1,0 +1,193 @@
+// keys/values that appear in the compiled CSS are wrapped in quotes,
+// to allow for the inclusion of numbers
+
+// $breakpoints: (
+//   "t": "875px",
+// );
+
+$cotton: (
+  "background-color": (
+    prefix: "bg-",
+    values: (
+      "white": "#ffffff",
+      "black": "#161616",
+    ),
+  ),
+  "color": (
+    prefix: "c-",
+    values: (
+      "white": "#ffffff",
+      "black": "#161616",
+    ),
+  ),
+  "font-family": (
+    prefix: "",
+    values: (
+      "sans": "dm, sans-serif",
+      "serif": "cabinet, sans-serif",
+    ),
+  ),
+  "align-items": (
+    prefix: "ai",
+    values: (
+      "b": "baseline",
+      "c": "center",
+      "fe": "flex-end",
+      "fs": "flex-start",
+      "s": "stretch",
+    ),
+  ),
+  "cursor": (
+    prefix: "c",
+    values: (
+      "p": "pointer",
+    ),
+  ),
+  "display": (
+    prefix: "d",
+    values: (
+      "b": "block",
+      "ib": "inline-block",
+      "f": "flex",
+      "g": "grid",
+      "n": "none",
+    ),
+  ),
+  "flex-direction": (
+    prefix: "f",
+    values: (
+      "c": "column",
+      "cr": "column-reverse",
+      "r": "row",
+      "rr": "row-reverse",
+    ),
+  ),
+  "flex-wrap": (
+    prefix: "f",
+    values: (
+      "n": "no-wrap",
+      "w": "wrap",
+      "wr": "wrap-reverse",
+    ),
+  ),
+  "justify-content": (
+    prefix: "jc",
+    values: (
+      "c": "center",
+      "e": "flex-end",
+      "s": "flex-start",
+      "a": "space-around",
+      "b": "space-between",
+    ),
+  ),
+  "position": (
+    prefix: "p",
+    values: (
+      "a": "absolute",
+      "f": "fixed",
+      "r": "relative",
+      "s": "static",
+    ),
+  ),
+  "top": (
+    prefix: "",
+    values: (
+      "top": "0",
+    ),
+  ),
+  "right": (
+    prefix: "",
+    values: (
+      "right": "0",
+    ),
+  ),
+  "bottom": (
+    prefix: "",
+    values: (
+      "bottom": "0",
+    ),
+  ),
+  "left": (
+    prefix: "",
+    values: (
+      "left": "0",
+    ),
+  ),
+  "text-align": (
+    prefix: "ta",
+    values: (
+      "c": "center",
+      "l": "left",
+      "r": "right",
+    ),
+  ),
+  "text-transform": (
+    prefix: "tt",
+    values: (
+      "u": "uppercase",
+    ),
+  ),
+  "overflow": (
+    prefix: "o",
+    values: (
+      "h": "hidden",
+    ),
+  ),
+  "pointer-events": (
+    prefix: "pe",
+    values: (
+      "n": "none",
+      "a": "all",
+    ),
+  ),
+  "z-index": (
+    prefix: "z",
+    values: (
+      "n10": "-10",
+      "n9": "-9",
+      "n8": "-8",
+      "n7": "-7",
+      "n6": "-6",
+      "n5": "-5",
+      "n4": "-4",
+      "n3": "-3",
+      "n2": "-2",
+      "n1": "-1",
+      "0": "0",
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10",
+    ),
+  ),
+);
+
+// mobile classes generation
+
+@each $prop, $config in $cotton {
+  @each $prefix, $value in map-get($config, "values") {
+    .#{ map-get($config, "prefix") }#{ $prefix } {
+      #{ $prop }: #{$value};
+    }
+  }
+}
+
+// breakpoint classes generation
+
+// @each $label, $size in $breakpoints {
+//   @media screen and (min-width: $size) {
+//     @each $prop, $config in $cotton {
+//       @each $prefix, $value in map-get($config, "values") {
+//         .#{ $label }-#{ map-get($config, "prefix") }#{ $prefix } {
+//           #{ $prop }: #{ $value };
+//         }
+//       }
+//     }
+//   }
+// }

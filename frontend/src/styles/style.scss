@@ -1,0 +1,20 @@
+@import "./type.scss";
+
+@import "./utils.scss";
+@import "./cotton";
+
+canvas.gl {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+#svg {
+  width: 0;
+  height: 0;
+}
+
+main {
+  min-height: 100vh;
+}

@@ -1,0 +1,79 @@
+@import "../../styles/utils.scss";
+
+.data-layout {
+  h1 {
+    font-weight: bold;
+    font-size: fluid(56, 1440);
+    line-height: 1.61;
+    color: #dee3ea;
+
+    margin-bottom: fluid(48, 1440);
+  }
+
+  #control-panel {
+    margin-bottom: fluid(48, 1440);
+  }
+
+  #searchbar {
+    max-width: fluid(764, 1440);
+    height: fluid(40, 1440);
+
+    background: #242c37;
+    border: none;
+  }
+
+  #add-btn {
+    width: fluid(156, 1440);
+    margin-right: fluid(16, 1440);
+    height: fluid(40, 1440);
+  }
+
+  #export-btn {
+    width: fluid(114, 1440);
+    height: fluid(40, 1440);
+  }
+
+  .ant-btn-secondary {
+    background-color: #242c37;
+    border: none;
+  }
+
+  .ant-table {
+    background-color: #242c37;
+  }
+
+  .ant-table-thead > tr > th {
+    background: #242c37;
+    border-bottom: solid 1px #323d4d;
+
+    padding-top: 16px;
+    padding-bottom: 16px;
+
+    color: rgba(222, 227, 234, 0.6);
+  }
+
+  .ant-table-cell {
+    border: none;
+    padding-bottom: 12px;
+  }
+
+  .ant-table-tbody > tr.ant-table-row {
+    cursor: pointer;
+  }
+
+  .ant-table-tbody > tr.ant-table-row:hover > td {
+    background-color: #151a21;
+  }
+
+  .anticon > svg {
+    width: inherit;
+  }
+
+  .ant-pagination-item-link,
+  .ant-pagination-item-active,
+  .ant-pagination-item-active a {
+    background: #242c37;
+    border: none;
+    color: #dee3ea;
+  }
+}

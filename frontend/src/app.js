@@ -1,29 +1,18 @@
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import { Nav } from "./components/nav";
 
 import { Dashboard } from "./containers/dashboard";
 import { Clients } from "./containers/clients";
 import { Invoices } from "./containers/invoices";
 import { Editor } from "./containers/editor";
+import { Projects } from "./containers/projects";
+import { Project } from "./containers/project";
 
 export const App = () => {
   return (
     <Router>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/"> Home </Link>
-          </li>
-          <li>
-            <Link to="/clients"> Clients </Link>
-          </li>
-          <li>
-            <Link to="/invoices"> Invoices </Link>
-          </li>
-          <li>
-            <Link to="/editor"> Editor </Link>
-          </li>
-        </ul>
-      </nav>
+      <Nav />
 
       <Switch>
         <Route exact path="/">
@@ -37,6 +26,12 @@ export const App = () => {
         </Route>
         <Route path="/editor">
           <Editor />
+        </Route>
+        <Route path="/projects">
+          <Projects />
+        </Route>
+        <Route path="/project/:id">
+          <Project />
         </Route>
       </Switch>
     </Router>

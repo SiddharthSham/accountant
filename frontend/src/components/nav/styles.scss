@@ -1,0 +1,29 @@
+@import "../../styles/utils.scss";
+
+#nav {
+  width: fluid(1093, 1440);
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-top: fluid(52, 1440);
+}
+
+#nav-brand {
+  font-weight: bold;
+  font-size: fluid(20, 1440);
+  line-height: 1.6;
+  color: #dee3ea;
+}
+
+.nav-list--item {
+  margin-right: fluid(24, 1440);
+
+  font-weight: bold;
+  font-size: fluid(16, 1440);
+  line-height: 1;
+  color: rgba(222, 227, 234, 0.6);
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}

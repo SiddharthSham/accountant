@@ -2,6 +2,9 @@ import create from "zustand";
 
 export const useInvoiceStore = create((set) => ({
   invoices: [],
+  setInvoices: (invoices) => {
+    return set((state) => ({ invoices: invoices }));
+  },
   addInvoice: (invoice) => {
     return set((state) => ({ invoices: [...state.invoices, invoice] }));
   },

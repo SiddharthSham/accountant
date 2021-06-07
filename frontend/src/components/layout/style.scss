@@ -1,0 +1,9 @@
+@import "../../styles/utils.scss";
+
+main {
+  width: fluid(1093, 1440);
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-top: fluid(80, 1440);
+}

@@ -1,12 +1,13 @@
-import { useClientStore } from "../../store/clients";
+import { useProjectsStore } from "../../store/projects";
 
 import { DataLayout } from "../../components/dataLayout";
 
 import "./style.scss";
 
-export const Clients = () => {
-  const data = useClientStore((state) => state.clients);
-  const setClients = useClientStore((state) => state.setClients);
+export const Projects = () => {
+  const data = useProjectsStore((state) => state.projects);
+  const setProjects = useProjectsStore((state) => state.setProjects);
+  
 
   const columns = [
     {
@@ -38,12 +39,12 @@ export const Clients = () => {
 
   return (
     <DataLayout
-      id="clients"
-      title="Clients Master"
+      id="projects"
+      title="Projects Master"
       name="project"
       api="/test"
       data={data}
-      setData={setClients}
+      setData={setProjects}
       columns={columns}
     />
   );
